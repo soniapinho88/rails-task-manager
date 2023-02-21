@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>All tasks</h1>
+
+  <ul>
+    <% @tasks.each do |task| %>
+      <li><%= task.completed? ? '✅' : '❌' %><%= link_to task.title, task_path(task) %></li>
+    <% end %>
+  </ul>
+
+  <h4><%= link_to "➕ Add a new task", new_task_path %></h4>
+</div>
